@@ -16,7 +16,7 @@ jobs:
         if: steps.compare.outputs.DEPLOY_PROD == 'false'
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
-          approvers: Arvindh-Mojo
+          approvers: svarvindh
           minimum-approvals: 1
           issue-title: "Approval to bypass"
   
