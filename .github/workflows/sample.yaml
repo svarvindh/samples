@@ -13,7 +13,6 @@ jobs:
 
       - uses: svarvindh/github-actions-approval@v4.0.0
         id: bypass
-        if: steps.compare.outputs.DEPLOY_PROD == 'false'
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
           approvers: svarvindh
@@ -22,6 +21,5 @@ jobs:
   
       - name: Dummy Proceed to deployment
         id: deploy
-        if: ${{ steps.compare.outputs.DEPLOY_PROD }} == 'true' ||  ${{ success () }}
         run: |
           echo ${{ steps.bypass.outputs.status }}
