@@ -11,7 +11,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-
       - uses: svarvindh/github-actions-approval@v4.0.0
         id: bypass
         if: steps.compare.outputs.DEPLOY_PROD == 'false'
@@ -21,7 +20,7 @@ jobs:
           minimum-approvals: 1
           issue-title: "Approval to bypass"
   
-        - name: Dummy Proceed to deployment
+      - name: Dummy Proceed to deployment
         id: deploy
         if: ${{ steps.compare.outputs.DEPLOY_PROD }} == 'true' ||  ${{ success () }}
         run: |
