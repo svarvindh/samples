@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - uses: svarvindh/github-actions-approval@v0.0.1
+      - uses: svarvindh/gha-approval@v2.0.0
         id: bypass
         with:
           secret: ${{ secrets.GITHUB_TOKEN }}
