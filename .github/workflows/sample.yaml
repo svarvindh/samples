@@ -2,11 +2,6 @@ name: "Sample"
 on:
   workflow_dispatch:
 
-env:
-  registry: ghcr.io
-  username: ${{ github.actor }}
-  password: ${{ secrets.TOKEN }}
-
 jobs:
   Image_Version_Validation:
     runs-on: ubuntu-latest
@@ -14,17 +9,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-      - name: Login to GitHub Container Registry
-        uses: docker/login-action@v1
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.TOKEN }}
 
       - uses: svarvindh/github-actions-approval@v0.0.1
         id: bypass
         with:
-          secret: ${{ secrets.TOKEN }}
+          secret: ${{ secrets.GITHUB_TOKEN }}
           approvers: svarvindh
           minimum-approvals: 1
           issue-title: "Approval to bypass"
