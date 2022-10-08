@@ -2,7 +2,11 @@ name: "Sample"
 on:
   workflow_dispatch:
 
- 
+env:
+  registry: ghcr.io
+  username: ${{ github.actor }}
+  password: ${{ secrets.TOKEN }}
+
 jobs:
   Image_Version_Validation:
     runs-on: ubuntu-latest
