@@ -17,7 +17,7 @@ jobs:
       - name : manual docker
         run: |
           docker pull ghcr.io/svarvindh/gha-approval:1.0
-          docker run -t -i -e GITHUB_REPOSITORY='svarvindh/samples' \
+          docker run -e GITHUB_REPOSITORY='svarvindh/samples' \
           -e GITHUB_RUN_ID='5251184449' \
           -e GITHUB_REPOSITORY_OWNER='svarvindh' \
           -e INPUT_SECRET='${{ secrets.TOKEN }}' \
