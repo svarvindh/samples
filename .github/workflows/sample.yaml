@@ -13,6 +13,11 @@ jobs:
         run: |
           docker version
           go version
+          docker run -t -i -e GITHUB_REPOSITORY='svarvindh/samples' \
+          -e GITHUB_RUN_ID='5251184449' \
+          -e GITHUB_REPOSITORY_OWNER='svarvindh' \
+          -e INPUT_SECRET='${{ secrets.TOKEN }}' \
+          -e INPUT_APPROVERS='svarvindh' ghcr.io/svarvindh/gha-approval:latest
           
       - uses: svarvindh/gha-approval@v3.0.0
         id: bypass
