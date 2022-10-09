@@ -17,7 +17,7 @@ jobs:
       - uses: svarvindh/gha-approval@v4.0.0
         id: bypass
         with:
-          secret: ${{ secrets.TOKEN }}
+          secret: ${{ secrets.NEW_TOKEN }}
           approvers: svarvindh
           minimum-approvals: 1
           issue-title: "Approval to bypass"
