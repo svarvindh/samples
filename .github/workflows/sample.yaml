@@ -12,6 +12,7 @@ jobs:
       - name: echos
         run: |
           docker version
+          go version
           
       - uses: svarvindh/gha-approval@v3.0.0
         id: bypass
