@@ -9,14 +9,18 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
-
+      - name: echos
+        run: |
+          docker version
+          
       - uses: svarvindh/gha-approval@v2.0.0
         id: bypass
         with:
-          secret: ${{ secrets.GITHUB_TOKEN }}
+          secret: ${{ secrets.TOKEN }}
           approvers: svarvindh
           minimum-approvals: 1
           issue-title: "Approval to bypass"
+  
   
       - name: Dummy Proceed to deployment
         id: deploy
