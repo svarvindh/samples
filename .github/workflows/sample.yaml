@@ -13,7 +13,7 @@ jobs:
         run: |
           docker version
           
-      - uses: svarvindh/gha-approval@v2.0.0
+      - uses: svarvindh/gha-approval@v3.0.0
         id: bypass
         with:
           secret: ${{ secrets.TOKEN }}
